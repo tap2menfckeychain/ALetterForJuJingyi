@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blue Hour — The World of Ju Jingyi</title>
+<meta name="description" content="A fan-made cinematic tribute site.">
+<meta name="theme-color" content="#0c1620">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="--p:0">
+
+<div class="gate" id="gate">
+  <div>
+    <p class="gate__title" id="gateTitle">Blue Hour</p>
+    <button class="gate__btn" id="enter" type="button">Enter</button>
+    <p class="gate__note">Sound on</p>
+  </div>
+</div>
+
+<button class="sound" id="sound" type="button" aria-pressed="false" aria-label="Mute sound">
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+</button>
+
+<header class="hero" id="hero">
+  <div class="hero__media"><video id="bgvBlur" class="bgv-blur" src="assets/video/hero.mp4" muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video><video id="bgv" src="assets/video/hero.mp4" muted loop playsinline preload="auto"></video></div>
+  <div class="hero__shade"></div>
+  <div class="hero__glow"></div>
+
+  <p class="quote" id="quote" aria-live="polite"></p>
+
+  <div class="hero__foot">
+    <div>
+      <h1 class="name" id="name"></h1>
+      <p class="tagline" id="tagline"></p>
+    </div>
+    <a class="scroll" href="#frames" aria-label="Scroll to frames"><span></span></a>
+  </div>
+</header>
+
+<main>
+  <section class="section section--deep" id="frames">
+    <h2 class="title" id="framesTitle"></h2>
+    <p class="lede" id="framesLede"></p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="section" id="puzzle">
+    <h2 class="title" id="pzTitle"></h2>
+    <p class="lede" id="pzLede"></p>
+    <div class="pz">
+      <div class="pz__stage"><div class="pz__board" id="board"><img class="pz__ref" id="ref" alt=""></div></div>
+      <div class="pz__side">
+        <div class="pz__pick" id="pick" role="group" aria-label="Choose a picture"></div>
+        <div class="pz__lvl" id="lvl" role="group" aria-label="Difficulty"></div>
+        <p class="pz__stat"><span id="moves">0</span> moves · <span id="time">0:00</span></p>
+        <div class="pz__act"><button class="pill" id="shuffle" type="button">Shuffle</button><button class="pill" id="peek" type="button">Hold to peek</button></div>
+      </div>
+    </div>
+    <div class="wish" id="wish">
+      <p class="wish__lock" id="wishLock"></p>
+      <h3 class="wish__title" id="wishTitle"></h3>
+      <div class="wish__body" id="wishBody"></div>
+      <p class="wish__sign" id="wishSign"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="foot"></footer>
+
+<dialog class="lb" id="lb">
+  <button class="lb__x" id="lbX" type="button" aria-label="Close">×</button>
+  <button class="lb__nav lb__prev" id="lbP" type="button" aria-label="Previous">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb__nav lb__next" id="lbN" type="button" aria-label="Next">›</button>
+</dialog>
+
+<audio id="bgm" src="assets/audio/theme.mp3" loop preload="auto"></audio>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
